@@ -344,3 +344,272 @@ button{font:inherit;cursor:pointer;color:inherit;background:none;border:none}
 }
 
 .socials .soc-disabled{width:48px;height:48px;border-radius:50%;border:2px dashed rgba(236,228,211,.2);display:grid;place-items:center;opacity:.4;cursor:not-allowed;background:var(--panel)}
+
+/* ============================================================
+   ESTILOS COMPACTOS DE CARTA (MOBILE FIRST - CERO ESPACIO MUERTO)
+   ============================================================ */
+.sizes-bar {
+  display: flex;
+  background: var(--panel);
+  border: 1px solid rgba(236,228,211,.15);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+  max-width: 480px;
+  margin: 0 auto 20px auto;
+}
+.size-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--cream-dim);
+  font-weight: 600;
+  transition: all .2s;
+  cursor: pointer;
+}
+.size-btn .size-letter {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+.size-btn .size-name {
+  font-size: .84rem;
+}
+.size-btn.active {
+  background: var(--brick);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(200,85,61,.35);
+}
+
+.menu-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+@media(min-width: 900px) {
+  .menu-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 14px;
+  }
+}
+
+.menu-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--panel);
+  border: 1px solid rgba(236,228,211,.1);
+  border-radius: 12px;
+  padding: 10px 14px;
+  transition: border-color .2s, background .2s;
+}
+.menu-item-row:hover {
+  border-color: rgba(200,85,61,.45);
+  background: var(--panel2);
+}
+.menu-item-row.compact {
+  padding: 8px 12px;
+}
+
+.item-body {
+  flex: 1;
+  min-width: 0;
+}
+.item-title-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+.item-name {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.15;
+}
+.item-badge {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(227,176,75,.12);
+  border: 1px solid rgba(227,176,75,.3);
+  padding: 1px 6px;
+  border-radius: 5px;
+}
+.item-desc {
+  font-size: .82rem;
+  color: var(--cream-dim);
+  line-height: 1.3;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.item-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.item-price {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.25rem;
+  color: var(--brick);
+  letter-spacing: .5px;
+  white-space: nowrap;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.qty button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(236,228,211,.25);
+  display: grid;
+  place-items: center;
+  transition: all .2s;
+  background: var(--bg);
+  color: var(--cream);
+}
+.qty button:hover {
+  background: var(--cream);
+  color: var(--bg);
+}
+.qty .add {
+  background: var(--brick);
+  border-color: var(--brick);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(200,85,61,.3);
+}
+.qty .add:hover {
+  background: var(--brick-d);
+}
+.qty-num {
+  font-family: 'Anton', sans-serif;
+  font-size: 1rem;
+  min-width: 14px;
+  text-align: center;
+  color: #fff;
+}
+
+.combos-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 18px 0;
+  padding: 12px 16px;
+  border: 1px dashed rgba(227,176,75,.4);
+  border-radius: 12px;
+  background: rgba(22,21,19,.7);
+}
+.combos-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.05rem;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.combos-chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.combo-chip {
+  font-size: .85rem;
+  color: var(--cream-dim);
+}
+.combo-chip strong {
+  color: #fff;
+}
+
+.sub-title {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin: 22px 0 10px;
+  color: var(--gold);
+}
+
+.extras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: 8px;
+}
+.extra-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--panel);
+  border: 1px solid rgba(236,228,211,.08);
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+.extra-row.off {
+  opacity: .4;
+}
+.extra-name {
+  font-size: .88rem;
+  color: var(--cream);
+}
+.extra-na {
+  display: block;
+  font-size: .75rem;
+  color: var(--cream-dim);
+}
+.extra-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.extra-price {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+.drinks-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media(min-width: 800px) {
+  .drinks-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.drink-group-card {
+  background: rgba(22,21,19,.5);
+  border: 1px solid rgba(236,228,211,.1);
+  border-radius: 14px;
+  padding: 14px;
+}
+.drink-group-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+  letter-spacing: .5px;
+}
